@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html $if(lang)$ lang="$lang$" $endif$>
+  <head>
+    <!-- Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="generator" content="pandoc" />
+    $for(author-meta)$
+    <meta name="author" content="$author-meta$" />
+    $endfor$ $if(date-meta)$
+    <meta name="date" content="$date-meta$" />
+    $endif$
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap-toc.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <style type="text/css">
+      code {
+        white-space: pre;
+      }
+    </style>
+    $if(quotes)$
+    <style type="text/css">
+      q {
+        quotes: "“" "”" "‘" "’";
+      }
+    </style>
+    $endif$
+    <style type="text/css">
+      body {
+        position: relative;
+      }
+    </style>
+
+    <!-- JS -->
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap-toc.min.js"></script>
+    <script src="./js/main.js"></script>
+
+    <!-- Title -->
+    <title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
+
+    $for(header-includes)$ $header-includes$ $endfor$
+  </head>
+
+  <body data-spy="scroll" data-target="#toc" data-offset="56">
+    $if(title)$
+    <nav
+      class="navbar sticky-top navbar-sticky navbar-expand-lg navbar-dark bg-dark mb-3"
+    >
+      <a class="navbar-brand" href="#">$title$</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarText"
+        aria-controls="navbarText"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          $for(author)$
+          <li class="nav-item">
+            <a class="nav-link" href="#">$author$</a>
+          </li>
+          $endfor$
+        </ul>
+        $if(date)$
+        <span class="navbar-text"> $date$ </span>
+        $endif$
+      </div>
+    </nav>
+    $endif$
+
+    <div class="container">
+      <div class="row">
+        $if(toc)$
+        <!-- TOC -->
+        <div class="col-sm-3">
+          <nav
+            id="toc"
+            data-spy="affix"
+            data-toggle="toc"
+            class="sticky-top"
+          ></nav>
+        </div>
+        $endif$
+
+        <!-- Main content -->
+        <div class="col-sm-9">
+          $for(include-before)$ $include-before$ $endfor$ $body$
+          $for(include-after)$ $include-after$ $endfor$
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
