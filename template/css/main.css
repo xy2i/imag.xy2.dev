@@ -1,8 +1,12 @@
 @font-face {
-  font-family: "Fira Code var";
-  src: url("../font/FiraCode-Var.ttf") format("truetype");
-  font-weight: 100 900;
+  font-family: "Recursive";
+  src: url("../font/Recursive.woff2") format('woff2 supports variations'), 
+    url("../font/Recursive.woff2") format("woff2-variations");
+  font-weight: 100 1000;
 }
+  /*font-variation-settings: "MONO" 1, "CASL" 0, "slnt" 0, "CRSV" 0;
+  font-variation-settings: "MONO" 1, "CASL" 1, "slnt" -10, "CRSV" 1;
+  font-variation-settings: "MONO" 1, "CASL" 1, "slnt" -10, "CRSV" 1;*/
 
 nav[data-toggle="toc"] {
   top: 56px;
@@ -31,9 +35,15 @@ nav[data-toggle="toc"] {
 nav[data-toggle="toc"] .nav .nav {
   display: block;
 }
-
+code {
+  font-family: "Recursive";
+  font-variation-settings: "MONO" 1, "CASL" 0, "slnt" 0, "CRSV" 0;
+  font-feature-settings: "ss03", "ss05", "ss08", "ss09", "ss12", "dlig";
+}
 pre code {
-  font-family: "Fira Code var";
+  font-family: "Recursive";
+  font-variation-settings: "MONO" 1, "CASL" 0, "slnt" 0, "CRSV" 0;
+  font-feature-settings: "ss03", "ss05", "ss08", "ss09", "ss12", "dlig";
   display: block;
   background-color: var(--light);
   padding: 9.5px;
@@ -160,6 +170,7 @@ code span.bu {
 code span.cf {
   color: #007020;
   font-weight: bold;
+  font-variation-settings: "MONO" 1, "CASL" 0, "slnt" 0, "CRSV" 0;
 } /* ControlFlow */
 code span.ch {
   color: #4070a0;
@@ -170,15 +181,18 @@ code span.cn {
 code span.co {
   color: #60a0b0;
   font-style: italic;
+  font-variation-settings: "MONO" 1, "CASL" 1, "slnt" -10, "CRSV" 1;
 } /* Comment */
 code span.cv {
   color: #60a0b0;
   font-weight: bold;
   font-style: italic;
+  font-variation-settings: "MONO" 1, "CASL" 1, "slnt" -10, "CRSV" 1;
 } /* CommentVar */
 code span.do {
   color: #ba2121;
   font-style: italic;
+  font-variation-settings: "MONO" 1, "CASL" 1, "slnt" -10, "CRSV" 1;
 } /* Documentation */
 code span.dt {
   color: #902000;
@@ -189,6 +203,7 @@ code span.dv {
 code span.er {
   color: #ff0000;
   font-weight: bold;
+  font-variation-settings: "MONO" 1, "CASL" 0, "slnt" 0, "CRSV" 0;
 } /* Error */
 code span.ex {
 } /* Extension */
@@ -204,10 +219,12 @@ code span.in {
   color: #60a0b0;
   font-weight: bold;
   font-style: italic;
+  font-variation-settings: "MONO" 1, "CASL" 1, "slnt" -10, "CRSV" 1;
 } /* Information */
 code span.kw {
   color: #007020;
   font-weight: bold;
+  font-variation-settings: "MONO" 1, "CASL" 0, "slnt" 0, "CRSV" 0;
 } /* Keyword */
 code span.op {
   color: #666666;
@@ -237,4 +254,5 @@ code span.wa {
   color: #60a0b0;
   font-weight: bold;
   font-style: italic;
+  font-variation-settings: "MONO" 1, "CASL" 1, "slnt" -10, "CRSV" 1;
 } /* Warning */
